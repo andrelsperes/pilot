@@ -1,14 +1,26 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import Download32 from 'emblematic-icons/svg/Download32.svg'
 import {
   CardContent,
   CardTitle,
   Pagination,
   Table,
 } from 'former-kit'
-
+import ExportData from '../ExportData'
 import style from './style.css'
+
+const getExportOptions = onExport => ([
+  {
+    title: 'CSV',
+    action: () => onExport('csv'),
+  },
+  {
+    title: 'Excel',
+    action: () => onExport('xlsx'),
+  },
+])
 
 class Operations extends PureComponent {
   constructor (props) {
@@ -20,6 +32,7 @@ class Operations extends PureComponent {
   renderSubTitle () {
     const {
       currentPage,
+      onExportData,
       disabled,
       ofLabel,
       onPageChange,
@@ -29,6 +42,15 @@ class Operations extends PureComponent {
 
     return (
       <div className={style.subtitle}>
+        <ExportData
+          exportOptions={getExportOptions(onExportData)}
+          icon={<Download32 width={12} height={12} />}
+          placement="bottomEnd"
+          relevance="low"
+          size="tiny"
+          subtitle="Exportar para:"
+          title="Exportar tabela"
+        />
         <h3>{subtitle}</h3>
         <Pagination
           currentPage={currentPage}
@@ -103,6 +125,7 @@ Operations.propTypes = {
   })).isRequired,
   currentPage: PropTypes.number.isRequired,
   emptyMessage: PropTypes.string.isRequired,
+  onExportData: PropTypes.node,
   disabled: PropTypes.bool,
   ofLabel: PropTypes.string.isRequired,
   onPageChange: PropTypes.func.isRequired,
@@ -127,6 +150,7 @@ Operations.propTypes = {
 }
 
 Operations.defaultProps = {
+  onExportData: null,
   disabled: false,
 }
 
