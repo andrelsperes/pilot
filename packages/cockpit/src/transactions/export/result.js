@@ -34,6 +34,67 @@ const pickProps = [
   'updated_at',
 ]
 
+const headers = [
+  { status: 'Status' },
+  { id: 'ID'},
+  { created_date: 'Data'},
+  { name: 'Nome'},
+  { payment_method: 'Forma de Pagamento'},
+  { last_digits: 'Número do Cartão'},
+  { document: 'Documento'},
+  { email: 'Email'},
+  { subscription: 'ID da Assinatura'},
+  { phones: 'Telefone'},
+  { holder_name: 'Operadora de Cartão'},
+  { status_reason: 'Resposta da Operadora'},
+  { ip: 'IP'},
+  { brand_name: 'Bandeira do Cartão'},
+  { amount: 'Valor'},
+  { capture_amount: 'Valor Capturado'}, 
+  { refunded_amount: 'Valor Estornado'},
+  { split_rules: 'Recebedores'},
+  { address: 'Endereço'},
+  { address_number: 'Número do Endereço'},
+  { address_complement: 'Complemento'},	
+  { address_neibourhold: 'Bairro'},
+  { address_zip_cpde: 'CEP'}, 
+  { address_city: 'Cidade'},
+  { address_state: 'Estado'},
+]
+
+
+
+const headers = [
+  'Status',
+  'ID',
+  'Data',
+  'Nome',
+  'Forma de Pagamento',
+  'Número do Cartão',
+  'Documento',
+  'Email',
+  'ID da Assinatura',
+  'Telefone',
+  'Operadora de Cartão',
+  'Resposta da Operadora',
+  'IP',
+  'Bandeira do Cartão',
+  'Valor',
+  'Valor Capturado', 
+  'Valor Estornado',
+  'Recebedores',
+  'Endereço',
+  'Número do Endereço',
+  'Complemento',	
+  'Bairro',
+  'CEP', 
+  'Cidade',
+  'Estado',
+]
+
+
+
+
 const getHeaderValidProps = pipe(
   head,
   prop('_source'),

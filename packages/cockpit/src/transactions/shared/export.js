@@ -17,6 +17,35 @@ import {
   unless,
 } from 'ramda'
 
+
+const headers = [
+  'Status',
+  'ID',
+  'Data',
+  'Nome',
+  'Forma de Pagamento',
+  'Número do Cartão',
+  'Documento',
+  'Email',
+  'ID da Assinatura',
+  'Telefone',
+  'Operadora de Cartão',
+  'Resposta da Operadora',
+  'IP',
+  'Bandeira do Cartão',
+  'Valor',
+  'Valor Capturado', 
+  'Valor Estornado',
+  'Recebedores',
+  'Endereço',
+  'Número do Endereço',
+  'Complemento',	
+  'Bairro',
+  'CEP', 
+  'Cidade',
+  'Estado',
+]
+
 const LIMITER = '-'
 
 const propOrLimiter = propOr(LIMITER)
